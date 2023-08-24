@@ -1346,6 +1346,10 @@ static u32 rand_frag_idx(u32* grads_avg) {
             break;
         rand_grad -= grads_avg[idx];
     }
+
+    if (idx == FRAGMENT_NUM)
+        idx = FRAGMENT_NUM - 1;
+
     return idx;
 }
 
